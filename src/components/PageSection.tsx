@@ -15,7 +15,7 @@ export function PageSection({ section }: Props) {
       return <LightServerComponent />;
 
     case "heavy-server-component":
-      return <HeavyServerComponent />;
+      return <HeavyServerComponent data={section.data} />;
 
     case "light-client-component":
       return <LightClientComponent />;

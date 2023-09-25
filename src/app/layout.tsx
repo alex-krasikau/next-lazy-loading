@@ -23,11 +23,22 @@ export default function RootLayout({
 
         <nav className="mt-6">
           <ul className="flex gap-2 flex-wrap">
+            <li>
+              <Link
+                href="/"
+                className="inline-block px-4 py-2 bg-gray-800 text-white rounded-lg"
+                prefetch={false}
+              >
+                Home
+              </Link>
+            </li>
+
             {pages.map((page) => (
               <li key={page.title}>
                 <Link
                   href={slugify(page.title, { lower: true })}
                   className="inline-block px-4 py-2 bg-gray-800 text-white rounded-lg"
+                  prefetch={false}
                 >
                   {page.title}
                 </Link>

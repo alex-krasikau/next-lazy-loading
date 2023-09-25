@@ -1,3 +1,5 @@
+import { heavyServerContent } from "./heavy-server-content";
+
 interface Page {
   title: string;
   sections: Section[];
@@ -10,6 +12,7 @@ export interface Section {
     | "heavy-server-component"
     | "heavy-client-component"
     | "heavy-client-component-2";
+  data?: any;
 }
 
 export const pages: Page[] = [
@@ -22,7 +25,7 @@ export const pages: Page[] = [
     title: "Heavy server page",
     sections: [
       { type: "light-server-component" },
-      { type: "heavy-server-component" },
+      { type: "heavy-server-component", data: heavyServerContent },
     ],
   },
 
@@ -30,7 +33,6 @@ export const pages: Page[] = [
     title: "Light client page",
     sections: [
       { type: "light-server-component" },
-      { type: "heavy-server-component" },
       { type: "light-client-component" },
     ],
   },
@@ -39,7 +41,6 @@ export const pages: Page[] = [
     title: "Heavy client page",
     sections: [
       { type: "light-server-component" },
-      { type: "heavy-server-component" },
       { type: "heavy-client-component" },
     ],
   },
@@ -48,7 +49,7 @@ export const pages: Page[] = [
     title: "Heaviest client page",
     sections: [
       { type: "light-server-component" },
-      { type: "heavy-server-component" },
+      { type: "heavy-server-component", data: heavyServerContent },
       { type: "light-client-component" },
       { type: "heavy-client-component" },
       { type: "heavy-client-component-2" },
