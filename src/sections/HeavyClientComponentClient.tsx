@@ -1,6 +1,6 @@
 "use client";
 
-import Select from "react-select";
+import ReactSelect from "react-select";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -10,6 +10,6 @@ const options = [
 
 interface Props {}
 
-export function HeavyClientComponentClient({}: Props) {
-  return <Select options={options} />;
+export default function HeavyClientComponentClient({}: Props) {
+  return <ReactSelect options={options} />;
 }

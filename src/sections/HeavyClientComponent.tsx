@@ -1,6 +1,10 @@
-import { HeavyClientComponentClient } from "./HeavyClientComponentClient";
+import dynamic from "next/dynamic";
 
 interface Props {}
+
+const HeavyClientComponentClient = dynamic(
+  () => import("./HeavyClientComponentClient")
+);
 
 export function HeavyClientComponent({}: Props) {
   return (

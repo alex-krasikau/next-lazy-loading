@@ -20,3 +20,9 @@ export default function LandingPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  return pages.map((page) => ({
+    slug: slugify(page.title, { lower: true }),
+  }));
+}
